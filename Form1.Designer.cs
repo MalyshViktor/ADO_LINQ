@@ -47,9 +47,9 @@ namespace ADO_LINQ
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(108, 12);
+            this.listBox1.Location = new System.Drawing.Point(141, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(267, 229);
+            this.listBox1.Size = new System.Drawing.Size(377, 229);
             this.listBox1.TabIndex = 0;
             // 
             // button1
@@ -64,7 +64,7 @@ namespace ADO_LINQ
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(400, 12);
+            this.button2.Location = new System.Drawing.Point(539, 260);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -75,7 +75,7 @@ namespace ADO_LINQ
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(505, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(539, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(249, 229);
@@ -113,7 +113,7 @@ namespace ADO_LINQ
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(108, 258);
+            this.button6.Location = new System.Drawing.Point(12, 128);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(114, 23);
             this.button6.TabIndex = 7;
@@ -123,7 +123,7 @@ namespace ADO_LINQ
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(108, 287);
+            this.button7.Location = new System.Drawing.Point(12, 157);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(114, 23);
             this.button7.TabIndex = 8;
@@ -133,7 +133,7 @@ namespace ADO_LINQ
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(108, 316);
+            this.button8.Location = new System.Drawing.Point(12, 186);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(114, 23);
             this.button8.TabIndex = 9;
@@ -143,7 +143,7 @@ namespace ADO_LINQ
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(108, 345);
+            this.button9.Location = new System.Drawing.Point(12, 218);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(114, 23);
             this.button9.TabIndex = 10;

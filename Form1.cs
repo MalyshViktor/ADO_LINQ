@@ -106,7 +106,8 @@ namespace ADO_LINQ
                 Department = d,
                 Managers = mans.ToList()})
 
-            ){
+            )
+            {
                 listBox1.Items.Add(d.Department + " " + d.Managers.Count);
             }
         }
@@ -152,27 +153,44 @@ namespace ADO_LINQ
             //*Сотрудников бухгалтерии
             //* б) все
             listBox1.Items.Clear();
+            Console.WriteLine("Основной отдел:");
             firm = Program.DiContainer.Resolve<Model.Firm>();
-            var query = from m in firm.Managers
-                        orderby m.Surname
-                        where m.Id_main_dep.ToString().Contains ("131EF84B-F06E-494B-848F-BB4BC0604266")
+            var query = from d in firm.Departments
+                        join m in firm.Managers
+                        on d.Id equals m.Id_main_dep
+                        where d.Name.Contains("Бухгалтерия")
                         select new Model.ManDep
-                        {Manager = m};
+                        { Department = d, Manager = m };
             foreach (var obj in query)
             {
-                listBox1.Items.Add(obj.Manager.Surname + " " + obj.Manager.Name);
+                listBox1.Items.Add(obj.Department.Name + " (" +
+                    obj.Manager.Surname + " " + obj.Manager.Name + ")");
+            }
+            Console.WriteLine("По совместительству:");
+            var query1 = from sm in firm.Managers
+                        join d in firm.Departments
+                        on sm.Id_sec_dep equals d.Id
+                        where d.Name.Contains("Бухгалтерия")
+                        select new Model.ManDep
+                        { Department = d, Manager = sm };
+            foreach (var obj in query1)
+            {
+                listBox1.Items.Add(obj.Department.Name + " (" +
+                    obj.Manager.Surname + " " + obj.Manager.Name + ")");
             }
         }
-
+        //ФИО сотрудника -  ФИО Шефа
         private void button9_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            foreach (var m in
-            firm.Managers.
-            Where(m => m.Id_chief.HasValue))
+            var query1 = from m in firm.Managers
+                            join c in firm.Managers on m.Id_chief equals c.Id
+                            select new { Manager = m, Chief = c };
+            foreach (var obj in query1)
             {
-                listBox1.Items.Add(m);
+                listBox1.Items.Add(obj.Manager + "\t" + obj.Chief);
             }
+
         }
     }
 }
